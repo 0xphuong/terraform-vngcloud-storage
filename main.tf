@@ -6,6 +6,7 @@ locals {
         name      = "${volume_name}-${i}"
         size      = config.size
         server_id = config.server_id
+        zone_id   = config.zone_id != null ? config.zone_id : var.volumes.zone_id
       }
     ]
   ])
@@ -25,6 +26,9 @@ resource "vngcloud_vserver_volume" "this" {
   name           = each.value.name
   size           = each.value.size
   volume_type_id = var.volumes.volume_type_id
+
+  # Optional
+  zone_id = each.value.zone_id != null ? each.value.zone_id : null
 
   lifecycle {
     create_before_destroy = true

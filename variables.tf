@@ -7,10 +7,12 @@ variable "volumes" {
   description = "Shared volume parameters and per-volume configurations"
   type = object({
     volume_type_id = string
+    zone_id        = optional(string)
     volume_configs = map(object({
       count     = number
       size      = number
       server_id = optional(string, null)
+      zone_id   = optional(string)
     }))
   })
 

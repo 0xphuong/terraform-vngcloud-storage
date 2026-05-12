@@ -7,6 +7,12 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ## [Unreleased]
 
+## [1.1.0] - 2026-04-29
+
+### Added
+- `zone_id` in `volumes` (Optional) — default zone for all volumes
+- `zone_id` in `volume_configs` (Optional) — override zone per volume group; takes priority over volumes-level zone_id
+
 ## [1.0.0] - 2026-04-26
 
 ### Added
