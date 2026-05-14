@@ -21,7 +21,7 @@ variable "volumes" {
     error_message = "Each volume_config must have count >= 1."
   }
   validation {
-    condition     = alltrue([for k, v in var.volumes.volume_configs : v.size >= 10])
-    error_message = "Volume size must be at least 10 GB."
+    condition     = alltrue([for k, v in var.volumes.volume_configs : v.size >= 2])
+    error_message = "Volume size must be at least 2 GB."
   }
 }
